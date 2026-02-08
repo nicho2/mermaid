@@ -6,6 +6,7 @@ RUN corepack enable && corepack enable pnpm \
   && apk add --no-cache git bash
 
 COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml* .npmrc* ./
+COPY patches ./patches
 RUN pnpm install --frozen-lockfile
 
 COPY . .
