@@ -46,7 +46,7 @@
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
     "test:check:tsc": "tsx scripts/tsc-check.ts",
-    "prepare": "husky && pnpm build",
+    "prepare": "node scripts/prepare.mjs",
     "pre-commit": "lint-staged"
   },
   "repository": {
