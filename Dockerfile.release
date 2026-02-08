@@ -15,6 +15,9 @@ RUN corepack enable && corepack enable pnpm \
     python3
 
 COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml* .npmrc* ./
+COPY packages/*/package.json ./packages/
+COPY packages/mermaid/src/docs/package.json ./packages/mermaid/src/docs/
+COPY tests/*/package.json ./tests/
 COPY patches ./patches
 RUN pnpm install --frozen-lockfile
 
