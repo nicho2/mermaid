@@ -3,17 +3,17 @@ services:
     image: ghcr.io/nicho2/mermaid:dev
     restart: unless-stopped
     environment:
-      MERMAID_PORT: "9000"
-      NODE_OPTIONS: "--max_old_space_size=8192"
+      MERMAID_PORT: '9000'
+      NODE_OPTIONS: '--max_old_space_size=8192'
     ports:
-      - "9000:9000"
-    command: ["sh", "-lc", "pnpm dev"]
+      - '9000:9000'
+    command: ['sh', '-lc', 'pnpm dev']
 
   mermaid-docs:
     image: ghcr.io/nicho2/mermaid:dev
     restart: unless-stopped
     environment:
-      NODE_OPTIONS: "--max_old_space_size=8192"
+      NODE_OPTIONS: '--max_old_space_size=8192'
     ports:
-      - "3333:3333"
-    command: ["sh", "-lc", "./run docs:dev"]
+      - '3333:3333'
+    command: ['sh', '-lc', './run docs:dev']
