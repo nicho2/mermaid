@@ -3,7 +3,16 @@ FROM node:22-alpine
 WORKDIR /repo
 
 RUN corepack enable && corepack enable pnpm \
-  && apk add --no-cache git bash
+  && apk add --no-cache \
+    bash \
+    build-base \
+    cairo-dev \
+    giflib-dev \
+    git \
+    jpeg-dev \
+    pango-dev \
+    pixman-dev \
+    python3
 
 COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml* .npmrc* ./
 COPY patches ./patches
