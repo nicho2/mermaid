@@ -49,6 +49,24 @@ exclude = [
 # Phbpp 403
 "https://(www.)?phpbb.com",
 
+# NPM blocks automated checks with 403s
+"https://www.npmjs.com",
+
+# Applitools blocks automated checks with 415s
+"https://applitools.com",
+
+# Microsoft AppSource blocks automated checks with 403s
+"https://appsource.microsoft.com",
+
+# Medium blocks automated checks with 403s
+"https://medium.com",
+
+# Docsy docs link is unstable and returns 404s
+"https://www.docsy.dev",
+
+# DokuWiki blocks automated checks with 402s
+"https://(www.)?dokuwiki.org",
+
 # Swimm returns 404, even though the link is valid
 "https://docs.swimm.io",
 
