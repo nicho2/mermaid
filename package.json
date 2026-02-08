@@ -46,7 +46,7 @@
     "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
     "test:check:tsc": "tsx scripts/tsc-check.ts",
-    "prepare": "node scripts/prepare.mjs",
+    "prepare": "node --input-type=module -e \"import { existsSync } from 'node:fs'; if (existsSync('scripts/prepare.mjs')) { await import('./scripts/prepare.mjs'); }\"",
     "pre-commit": "lint-staged"
   },
   "repository": {
