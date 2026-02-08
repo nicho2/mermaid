@@ -3,18 +3,16 @@ FROM node:22.12.0-alpine3.19@sha256:40dc4b415c17b85bea9be05314b4a753f45a4e1716bb
 WORKDIR /repo
 
 RUN corepack enable && corepack enable pnpm \
-  && apt-get update \
-  && apt-get install -y --no-install-recommends \
+  && apk add --no-cache \
     bash \
-    build-essential \
+    build-base \
+    cairo-dev \
+    giflib-dev \
     git \
-    libcairo2-dev \
-    libgif-dev \
-    libjpeg-dev \
-    libpango1.0-dev \
-    libpixman-1-dev \
-    python3 \
-  && rm -rf /var/lib/apt/lists/*
+    libjpeg-turbo-dev \
+    pango-dev \
+    pixman-dev \
+    python3
 
 COPY package.json pnpm-lock.yaml* pnpm-workspace.yaml* .npmrc* ./
 COPY packages/*/package.json ./packages/
