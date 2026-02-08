@@ -4,14 +4,14 @@ services:
       context: .
       dockerfile: Dockerfile
     working_dir: /repo
-    command: ["sh", "-lc", "pnpm install && pnpm dev"]
+    command: ['sh', '-lc', 'pnpm install && pnpm dev']
     environment:
-      MERMAID_PORT: "9000"
-      NODE_OPTIONS: "--max_old_space_size=8192"
-      CHOKIDAR_USEPOLLING: "true"
-      WATCHPACK_POLLING: "true"
+      MERMAID_PORT: '9000'
+      NODE_OPTIONS: '--max_old_space_size=8192'
+      CHOKIDAR_USEPOLLING: 'true'
+      WATCHPACK_POLLING: 'true'
     ports:
-      - "9000:9000"
+      - '9000:9000'
     volumes:
       - .:/repo
       - node_modules:/repo/node_modules
@@ -21,13 +21,13 @@ services:
       context: .
       dockerfile: Dockerfile
     working_dir: /repo
-    command: ["sh", "-lc", "pnpm install && ./run docs:dev"]
+    command: ['sh', '-lc', 'pnpm install && ./run docs:dev']
     environment:
-      NODE_OPTIONS: "--max_old_space_size=8192"
-      CHOKIDAR_USEPOLLING: "true"
-      WATCHPACK_POLLING: "true"
+      NODE_OPTIONS: '--max_old_space_size=8192'
+      CHOKIDAR_USEPOLLING: 'true'
+      WATCHPACK_POLLING: 'true'
     ports:
-      - "3333:3333"
+      - '3333:3333'
     volumes:
       - .:/repo
       - node_modules:/repo/node_modules
