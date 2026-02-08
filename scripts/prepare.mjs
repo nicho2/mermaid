@@ -5,7 +5,7 @@ const hasBuildScript = existsSync('.esbuild/build.ts');
 const hasGitDir = existsSync('.git');
 
 if (!hasBuildScript) {
-  console.log('Skipping prepare build: .esbuild/build.ts not found.');
+  process.stdout.write('Skipping prepare build: .esbuild/build.ts not found.\n');
   process.exit(0);
 }
 
